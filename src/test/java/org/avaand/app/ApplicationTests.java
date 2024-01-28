@@ -1,10 +1,10 @@
-package org.wsd.app;
+package org.avaand.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootAppApplicationTests {
+class ApplicationTests {
 
     @Test
     void contextLoads() {
