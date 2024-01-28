@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  # Zookeeper
+  zookeeper:
+    container_name: zookeeper
+    image: zookeeper:latest
+    ports:
+      - "2181:2181"
+  # Kafka
+  kafka:
+    container_name: kafka
+    image: bitnami/kafka:latest
+    ports:
+      - "9092:9092"
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+    depends_on:
+        - zookeeper
